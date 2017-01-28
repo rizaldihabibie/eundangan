@@ -98,25 +98,27 @@ class register extends CI_Controller {
 			
 					if ($this->m_register->add($data)) {
 
-							$id = $this->m_register->get_id($username);
-							echo json_encode($id); exit();
+							$id = $this->m_register->get_id($username);							
 							$list = $this->m_register->find($id);
 							$kode = md5(time());
 							$this->m_register->add_verifikasi($id, $kode);
-							
-							$subject = 'Aktifasi Member Jadimanten';
+								
+							 $this->load->library('email');
 
-				            // Get full html:
-				            $body = 'Halo ' . $list->nama_user . ', <br> Terimakasih telah menjadi member Jadimanten. Untuk menyelesaikan proses pendaftaran, mohon verifikasi akun anda. <br>Klik link dibawah ini untuk verifikasi : <br><br> ' . base_url('register/aktivasi_berhasil/' . $kode);
-				            $this->load->library('email');
+							$subject = 'Aktifasi Member Eundangan';
+				            $body = 'Halo ' . $list->nama . ', <br> Terimakasih telah menjadi member Jadimanten. Untuk menyelesaikan proses pendaftaran, mohon verifikasi akun anda. <br>Klik link dibawah ini untuk verifikasi : <br><br> ' . base_url('register/aktivasi_berhasil/' . $kode);
+				          
 				            $result = $this->email
-				                ->from('niscalindo@gmail.com')
+				                ->from('danieldistance007@gmail.com')
 				                // ->reply_to('yoursecondemail@somedomain.com')    // Optional, an account where a human being reads.
 				                ->to($username)
 				                ->subject($subject)
 				                ->message($body)
 				                ->send();
-
+				               
+				    //            var_dump($result);
+								// echo '<br />';
+								// echo $this->email->print_debugger();exit();
 							$this->session->set_flashdata('indikator_register', 'true');
 							$this->session->set_flashdata('message', 'Terimakasih, Registrasi Member Berhasil');
 

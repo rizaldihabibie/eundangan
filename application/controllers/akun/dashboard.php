@@ -5,12 +5,12 @@ class dashboard extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        // if (!$this->session->userdata('SESS_AKUN_IS_LOGIN') || ($this->session->userdata('SESS_AKUN_IS_LOGIN') && $this->session->userdata('SESS_AKUN_USER_PRIV') !== 1)) 
-        // {
+        if (!$this->session->userdata('SESS_AKUN_IS_LOGIN') || ($this->session->userdata('SESS_AKUN_IS_LOGIN') && $this->session->userdata('SESS_AKUN_USER_PRIV') !== 1)) 
+        {
         
-        //     redirect(base_url('login'));
+            redirect(base_url('login'));
             
-        // }
+        }
             $this->output->set_header('Last-Modified:'.gmdate('D,d M Y H:i:s').'GMT');
             $this->output->set_header('Cache-Control:no-store, no-cache, must-revalidate');
             $this->output->set_header('Cache-Control:post-check=0,pre-check=0',false);
@@ -33,7 +33,7 @@ class dashboard extends CI_Controller {
 
     public function logout_konfirm($id_member)
     {
-        $data['list'] = $this->member_model->find($id_member);
+        $data['list'] = $this->m_member->find($id_member);
 
         if ($data['list']) 
         {            
@@ -44,7 +44,7 @@ class dashboard extends CI_Controller {
                     'last_login' => $date->format('Y-m-d H:i:s')
                 );
 
-            if ($this->member_model->last_login($id_member, $data)) 
+            if ($this->m_member->last_login($id_member, $data)) 
             {
 
                 $this->session->sess_destroy();

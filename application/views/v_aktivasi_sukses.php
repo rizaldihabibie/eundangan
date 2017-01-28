@@ -19,7 +19,7 @@
 							<div class="row">
 		                         <div class="col-lg-1"></div>
 		                         <div class="col-lg-10">	
-					   
+					   							<br>
 						              			<h2><span style="color:  #003399"><center>Anda berhasil melakukan aktivasi</center></span></h2> 
 						              			<hr><br>
 						              			<p>

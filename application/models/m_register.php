@@ -55,20 +55,10 @@ class m_register extends CI_Model {
 
 		}
 
-	// function select_id_user($data) 
-	// {
-	// 	$this->db->select('id_user');
-	// 	$this->db->from('user');
-	// 	$this->db->select('id_user');
-	// 	$this->db->where($data);
-	// 	$query = $this->db->get();
-	// 	if ($query->num_rows == 1) {
-	// 	     $row=$query->row();// fetch single row
-	// 	     return $row->id_user;// get doctor id
-	// 	} else {
-	// 	    return FALSE;
-	// 	}
-	// }
+	 public function find_aktivasi($kode)
+	 {
+	 	return $this->db->get_where('verifikasi_user', array('kode_konfirmasi' => $kode))->row();
+	 }
 
 	public function add_verifikasi($id, $kode)
 	{
@@ -91,7 +81,17 @@ class m_register extends CI_Model {
 		return $this->db->get('user')->num_rows();	
 	}
 
+	public function aktivasi_member($id_user)
+	{
+		return $this->db->update('user', array('is_active' => 1), array('id_user' => $id_user));
+	}
 
+	 public function delete_kode($kode)
+	 {
+	 	$where = array('kode_konfirmasi' => $kode);
+	 	$this->db->where($where);
+	 	return $this->db->delete('verifikasi_user');
+	 }
 
 	// public function reset_pwd($id, $kode)
 	// {
@@ -297,10 +297,7 @@ class m_register extends CI_Model {
 	//  	return $this->db->get('view_user')->row();
 	//  }
 
-	//  public function find_aktivasi($kode)
-	//  {
-	//  	return $this->db->get_where('table_verifikasi_user', array('kode_konfirmasi' => $kode))->row();
-	//  }
+	
 
 	//  public function delete_kode($kode)
 	//  {
@@ -309,10 +306,7 @@ class m_register extends CI_Model {
 	//  	return $this->db->delete('table_verifikasi_user');
 	//  }
 
-	// public function aktivasi_member($id_user)
-	// {
-	// 	return $this->db->update('user', array('aktif' => 1), array('id_user' => $id_user));
-	// }
+	
 	// public function find_reset($kode)
 	//  {
 	//  	return $this->db->get_where('table_reset_pwd', array('kode_konfirmasi' => $kode))->row();

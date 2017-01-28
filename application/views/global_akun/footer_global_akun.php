@@ -48,7 +48,6 @@
                         </address>
                     </div>
                 </div>
-              
                 <div class="col-sm-12">
                 <div class="copyright-text text-center">
                     <p>2016 &copy; Madrasah Alawiyah Al-Khairiyah. All rights reserved.<br> <a href="#">Privacy Policy</a> | <a href="#">Terms Of Service</a>
@@ -121,8 +120,8 @@
         
     <!-- START SCRIPTS -->
         <!-- START PLUGINS -->
-        <!-- // <script type="text/javascript" src="<?php echo base_url(); ?>assets/admin/js/plugins/jquery/jquery.min.js"></script>
-        <script type="text/javascript" src="<?php echo base_url(); ?>assets/admin/js/plugins/jquery/jquery-ui.min.js"></script> -->
+        <script type="text/javascript" src="<?php echo base_url(); ?>assets/admin/js/plugins/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>assets/admin/js/plugins/jquery/jquery-ui.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/admin/js/plugins/bootstrap/bootstrap.min.js"></script>        
         <!-- END PLUGINS -->
 
