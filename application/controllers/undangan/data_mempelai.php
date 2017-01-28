@@ -20,6 +20,7 @@ class data_mempelai extends CI_Controller {
 		
 		$this->load->model('m_login');
 		$this->load->model('m_member');
+		$this->load->model('m_undangan');
 		
 	}
 
@@ -119,6 +120,35 @@ class data_mempelai extends CI_Controller {
     	}else{
     		redirect(base_url('register'));
     	}
+
+    }
+
+    public function saveDataMempelai(){
+			$nama_lengkap_pria= $this->input->post('nama_lengkap_pria');
+			$nama_panggilan_pria= $this->input->post('nama_panggilan_pria');
+			$nama_ayah_pria= $this->input->post('nama_ayah_pria');
+			$nama_ibu_pria = $this->input->post('nama_ibu_pria');
+			$nama_lengkap_wanita= $this->input->post('nama_lengkap_wanita');
+			$nama_panggilan_wanita= $this->input->post('nama_panggilan_wanita');
+			$nama_ayah_wanita= $this->input->post('nama_ayah_wanita');
+			$nama_ibu_wanita= $this->input->post('nama_ibu_wanita');
+
+			$data = array(
+						'id_user' => $this->session->userdata('SESS_AKUN_ID_USER'),
+						'nama_lengkap_pria' => $nama_lengkap_pria,
+						'nama_panggilan_pria' => $nama_panggilan_pria,
+						'nama_ayah_pria' => $nama_ayah_pria,
+						'nama_ibu_pria' => $nama_ibu_pria,
+						'nama_lengkap_wanita' => $nama_lengkap_wanita,
+						'nama_panggilan_wanita' => $nama_panggilan_wanita,
+						'nama_ayah_wanita' => $nama_ayah_wanita,
+						'nama_ibu_wanita' => $nama_ibu_wanita
+						);
+
+			$success = $this->m_undangan->addMempelai($data);
+			if($success){
+				redirect(base_url('undangan/data_mempelai'));
+			}
 
     }
 	
