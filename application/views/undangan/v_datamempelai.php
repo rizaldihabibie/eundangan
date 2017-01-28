@@ -50,7 +50,7 @@
             <center><h3 class="bold"><span style="color: #FA2600">Kelola Data Mempelai</span></h3></center><hr>
             
           </div>
-          <form method="post" action="<?php echo base_url(); ?>undangan/data_mempelai">
+          <form method="post" action="<?php echo base_url(); ?>undangan/data_mempelai/saveDataMempelai">
             <div class="col-md-12">
               <div class="box box-warning">
                 <div class="box-header with-border">
@@ -160,7 +160,7 @@
                     </div>
                     <div class="col-lg-9">
                       
-                      <input type="text" name="nama_panggila_wanita"  class="form-control" placeholder="Nama Panggilan Mempelai Wanita" value="" required>
+                      <input type="text" name="nama_panggilan_wanita"  class="form-control" placeholder="Nama Panggilan Mempelai Wanita" value="" required>
                       
                     </div><br>
                   </div>
