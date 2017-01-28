@@ -19,8 +19,8 @@
 							<div class="row">
 		                         <div class="col-lg-1"></div>
 		                         <div class="col-lg-10">	
-					   
-						              			<h2><span style="color: #003399"><center>Aktivasi</center></span></h2> 
+					   <br>
+						              			<h2><span style="color: #003399"><center>AKTIVASI</center></span></h2> 
 						              			<hr><br>
 						              			<p>
 						              				

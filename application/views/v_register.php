@@ -60,7 +60,7 @@
               
             </div>
             <div class="form-bottom">
-              <form method="post" action="<?php echo base_url(); ?>register" class="registration-form">
+              <form method="post" action="<?php echo base_url(); ?>register/form">
                 <!-- <form method="post" action="<?php echo base_url(); ?>register" class="form-horizontal"> -->
                 <?php if($this->session->flashdata('telepon_konfirm')): ?>
                 <div class="alert alert-danger alert-dismissible" role="alert">

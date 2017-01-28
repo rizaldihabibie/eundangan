@@ -31,16 +31,10 @@ class login extends MY_Controller {
 
 	public function cek()
 	{
-		// $username = $this->input->post('username');
-		// echo json_encode($username); exit();
 		$this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
 
-		if ($this->form_validation->run() == FALSE) 
-		{
-			redirect(base_url('login'));
-			
-		} else {
+	
 			
 			$username = $this->input->post('username');
 			$password = $this->input->post('password');
@@ -103,10 +97,11 @@ class login extends MY_Controller {
 					$this->session->set_flashdata('message', 'Username atau Password anda tidak terdaftar');
 					
 					redirect('login');
-				}
-		}
+				}	
+			
+	}
 
-	}	
+		
 
 	public function get_id($username)
 	{

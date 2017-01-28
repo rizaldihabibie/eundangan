@@ -39,11 +39,7 @@ class register extends CI_Controller {
 		$this->form_validation->set_rules('hak_ases', ' Hak akses', 'trim|xss_clean');
 		$this->form_validation->set_rules('jenis_kelamin', ' Hak akses', 'trim|xss_clean');
 		
-		if ($this->form_validation->run() === FALSE) {
-
-			redirect(base_url('register'));
 		
-		} else {
 
 			$nama= $this->input->post('nama');
 			$jenis_kelamin= $this->input->post('jenis_kelamin');
@@ -55,7 +51,7 @@ class register extends CI_Controller {
 			$polapassword ="/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{5,}$/";
 			$polatelepon ="/^.{6,}$/";
 			
-			if($this->member_model->member_konflik($username) > 0 || $this->member_model->telepon_konflik($telepon) > 0  || !preg_match($polapassword, $this->input->post('password')) || !preg_match($polausername, $this->input->post('username')) || !preg_match($polatelepon, $this->input->post('telepon'))){
+			if($this->m_register->member_konflik($username) > 0 || $this->m_register->telepon_konflik($telepon) > 0  || !preg_match($polapassword, $this->input->post('password')) || !preg_match($polausername, $this->input->post('username')) || !preg_match($polatelepon, $this->input->post('telepon'))){
 				
 				if (!preg_match($polapassword, $this->input->post('password'))) {
 					$this->session->set_flashdata('password', 'Password minimal 5 digit dan terdiri dari huruf, angka serta beberapa karakter "!@#$%"');
@@ -64,13 +60,13 @@ class register extends CI_Controller {
 					$this->session->set_flashdata('username_konfirm', 'Email Tidak Valid');
 				}
 				
-				if ($this->member_model->member_konflik($username) > 0) {
+				if ($this->m_register->member_konflik($username) > 0) {
 					$this->session->set_flashdata('username', 'Email telah terdaftar sebelumnya');
 				}
 				if (!preg_match($polatelepon, $this->input->post('telepon'))) {
 					$this->session->set_flashdata('telepon', 'Nomor telepon minimal terdiri dari 6 karakter');
 				}
-				if ($this->member_model->telepon_konflik($telepon) > 0) {
+				if ($this->m_register->telepon_konflik($telepon) > 0) {
 					$this->session->set_flashdata('telepon_konfirm', 'Nomor Telepon tersebut sudah digunakan');
 				}
 				
@@ -100,18 +96,14 @@ class register extends CI_Controller {
 				
 					$this->session->set_userdata($data);
 			
-					if ($this->member_model->add($data)) {
+					if ($this->m_register->add($data)) {
 
-						$id = $this->m_register->select_id_user($data)->id_user;
-						$data_undangan = array('id_user' => $id
-									
-									);
-						if ($this->m_register->add_register($data_undangan)) {
-
+							$id = $this->m_register->get_id($username);
+							echo json_encode($id); exit();
 							$list = $this->m_register->find($id);
 							$kode = md5(time());
 							$this->m_register->add_verifikasi($id, $kode);
-
+							
 							$subject = 'Aktifasi Member Jadimanten';
 
 				            // Get full html:
@@ -136,8 +128,8 @@ class register extends CI_Controller {
 								redirect(base_url('register'));
 							}
 					} 
-			}
-		}
+			
+		
 	}
 
 	// public function notif()
@@ -155,13 +147,13 @@ class register extends CI_Controller {
 	{
 		$this->load->view('global_home/header_global_home');
 		$this->load->view('v_aktivasi');
-		$this->load->view('global_home/footer_global_footer');
+		$this->load->view('global_home/footer_global_home');
 	}
 	public function aktivasi_error()
 	{
 		$this->load->view('global_home/header_global_home');
 		$this->load->view('v_aktivasi_error');
-		$this->load->view('global_home/footer_global_footer');
+		$this->load->view('global_home/footer_global_home');
 	}
 
 	public function aktivasi_berhasil($kode = null)
@@ -182,9 +174,9 @@ class register extends CI_Controller {
 								$result = $this->m_register->aktivasi_member($id_user);
 
 								if ($result && $this->m_register->delete_kode($kode)) {
-									$this->load->view('global_home/header_global_footer');
+									$this->load->view('global_home/header_global_home');
 									$this->load->view('v_aktivasi_sukses');
-									$this->load->view('global_home/footer_global_footer');
+									$this->load->view('global_home/footer_global_home');
 								} else {
 								 echo 'Gagal';
 								}
@@ -212,9 +204,9 @@ class register extends CI_Controller {
 				if ($this->form_validation->run() === FALSE) {
 					$data['kode'] = $kode;
 
-					$this->load->view('global_home/header_global_footer');
+					$this->load->view('global_home/header_global_home');
 					$this->load->view('v_ubah_password', $data);
-					$this->load->view('global_home/footer_global_footer');
+					$this->load->view('global_home/footer_global_home');
 				} else {
 					$password= $this->input->post('password');
 					$konfirm_password = $this->input->post('konfirm_password');
@@ -258,9 +250,9 @@ class register extends CI_Controller {
 	public function reset_sukses()
 	{
 
-		$this->load->view('global_home/header_global_footerl');
+		$this->load->view('global_home/header_global_home');
 		$this->load->view('v_reset_sukses');
-		$this->load->view('global_home/footer_global_footer');
+		$this->load->view('global_home/footer_global_home');
 	}
 	
 }
