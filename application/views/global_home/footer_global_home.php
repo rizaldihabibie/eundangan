@@ -58,6 +58,7 @@
 
                <!-- Template Javascript Files
         ================================================== -->
+                 <!-- <script src='https://www.google.com/recaptcha/api.js'></script> -->
         <!-- modernizr js -->
         <script src="<?php echo base_url(); ?>assets/timer/js/vendor/modernizr-2.6.2.min.js"></script>
         <!-- jquery -->

@@ -19,14 +19,14 @@
 							<div class="row">
 		                         <div class="col-lg-1"></div>
 		                         <div class="col-lg-10">	
-					   
-						              			<h2><span style="color:  #003399"><center>Password reset</center></span></h2> 
-						              			<hr><br>
+					   							<br>
+						              			<h2><span style="color:  #003399"><center>Email ubah kata sandi</center></span></h2> 
+						              			<hr>
 						              			<p>
-									               	Saat ini kami telah mengirimkan sebuah email yang berisi petunjuk reset password akun Anda. 
+									               	Saat ini kami telah mengirimkan sebuah email yang berisi petunjuk mengubah kata sandi akun Anda. 
 									               	<br><h3><?php echo $this->session->userdata('username');?></h3>
-									               	 <br>Silakan periksa kembali folder kotak masuk atau folder spam di email Anda. 
-						              			</p><br><br>
+									               	 Silakan periksa kembali folder kotak masuk atau folder spam di email Anda. 
+						              			</p>
 						              			
 						          </div>
 						          <div class="col-lg-1"></div>

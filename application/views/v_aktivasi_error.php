@@ -19,14 +19,14 @@
 							<div class="row">
 		                         <div class="col-lg-1"></div>
 		                         <div class="col-lg-10">	
-					   
+					   							<br>
 						              			<h2><span style="color:  #003399"><center>Maaf Anda sudah Teraktivasi</center></span></h2> 
 						              			<hr><br>
 						              			<p>
 									               	Silahkan login dengan akun anda. <br><br>
 									               	<div class="col-lg-3"></div>
                    	 								<div class="col-lg-6">
-												          <a href='<?php echo base_url(); ?>member/login' class="btn btn-block btn-flat btn-success"> login</a> 
+												          <a href='<?php echo base_url(); ?>login' class="btn btn-block btn-flat btn-success"> login</a> 
 											         </div>
 											         <div class="col-lg-3"></div><br>
 									               	

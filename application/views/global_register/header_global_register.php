@@ -35,7 +35,7 @@
         <!-- responsive css -->
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/timer/css/responsive.css">
         
-         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/register/assets/css/form-elements1.css"> 
+         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/register/assets/css/form-elements2.css"> 
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/register/assets/css/style.css"> 
         

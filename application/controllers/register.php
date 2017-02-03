@@ -37,12 +37,10 @@ class register extends CI_Controller {
 		$this->form_validation->set_rules('username', 'Username', 'trim|xss_clean');
 		$this->form_validation->set_rules('password', 'Password', 'trim|xss_clean');
 		$this->form_validation->set_rules('hak_ases', ' Hak akses', 'trim|xss_clean');
-		$this->form_validation->set_rules('jenis_kelamin', ' Hak akses', 'trim|xss_clean');
 		
 		
 
 			$nama= $this->input->post('nama');
-			$jenis_kelamin= $this->input->post('jenis_kelamin');
 			$telepon= $this->input->post('telepon');
 			$username = $this->input->post('username');
 			$password= $this->input->post('password');
@@ -71,7 +69,6 @@ class register extends CI_Controller {
 				}
 				
 				$this->session->set_flashdata('NAM',$this->input->post('nama'));
-				$this->session->set_flashdata('KELAMIN',$this->input->post('jenis_kelamin'));
 				$this->session->set_flashdata('TELEPO',$this->input->post('telepon'));
 				$this->session->set_flashdata('USERNAM',$this->input->post('username'));
 				$this->session->set_flashdata('PASSWOR',$this->input->post('password'));
@@ -83,7 +80,6 @@ class register extends CI_Controller {
 
 					$data = array(
 						'nama' => $nama,
-						'jenis_kelamin' => $jenis_kelamin,
 						'telepon' => $telepon,
 						'username' => $username,
 						'password' => $password,
@@ -190,22 +186,35 @@ class register extends CI_Controller {
 	}
 
 
-	public function reset_password ($kode = null)
+		public function change($kode)
+	{
+
+			$data['kode'] = $kode;
+			// var_dump($data['kode']);exit();
+			$this->load->view('global_home/header_global_home');
+			$this->load->view('v_ubah_password', $data);
+			$this->load->view('global_home/footer_global_home');
+		
+	}
+
+
+	public function reset_password ($kode)
 	{	
-		$this->load->model('m_register');
+		
 		if (is_null($kode)) {
+			// var_dump($kode);exit();
 				redirect(base_url());
 		} else {
 			$cekApaAda = $this->m_register->find_reset($kode);
-
-			// var_dump($kode);
+			
+			
 			if ($cekApaAda) {
 				$this->form_validation->set_rules('password', 'Password', 'trim|xss_clean');
 				$this->form_validation->set_rules('konfirm_password', 'Konfirmasi Password', 'trim|xss_clean');
 
 				if ($this->form_validation->run() === FALSE) {
 					$data['kode'] = $kode;
-
+					// var_dump($data['kode']);exit();
 					$this->load->view('global_home/header_global_home');
 					$this->load->view('v_ubah_password', $data);
 					$this->load->view('global_home/footer_global_home');
@@ -213,11 +222,11 @@ class register extends CI_Controller {
 					$password= $this->input->post('password');
 					$konfirm_password = $this->input->post('konfirm_password');
 
-					$polapassword ="/^.{5,}$/";
+					$polapassword ="/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{5,}$/";
 
 					if($this->input->post('password') !== $this->input->post('konfirm_password') || !preg_match($polapassword, $this->input->post('password'))){
 						if (!preg_match($polapassword, $this->input->post('password'))) {
-							$this->session->set_flashdata('password_konfirm', 'Password minimal terdiri dari 5 karakter');
+							$this->session->set_flashdata('password_konfirm', 'Password minimal 5 digit dan terdiri dari huruf, angka serta beberapa karakter "!@#$%"');
 						}
 						if ($this->input->post('password') !== $this->input->post('konfirm_password')) {
 							$this->session->set_flashdata('password', 'Password dan konfirmasi password tidak cocok');

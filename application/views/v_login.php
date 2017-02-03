@@ -12,7 +12,7 @@
                                 <div class="form-top-left">
                                     <h3>Masuk ke Akun Anda</h3>
                                     <p>Masukkan Username dan Kata Sandi :</p>
-                                    <small><p><u><a href="#">Lupa Kata Sandi ?</a></u></p></small>
+                                    <small><p><u><a href="<?php echo base_url(); ?>reset">Lupa Kata Sandi ?</a></u></p></small>
                                 </div>
                                
                             </div>
@@ -41,6 +41,7 @@
                                         <label class="sr-only" for="form-password">Kata Sandi</label>
                                         <input class="form-control" name="password" placeholder="Kata Sandi" type="password" >
                                     </div>
+                                    
                                     <button type="submit" class="btn">Masuk</button>
                                 </form>
                             </div>

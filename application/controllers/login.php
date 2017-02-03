@@ -16,16 +16,16 @@ class login extends MY_Controller {
 		$this->output->set_header('Pragma: no-cache');
 
 		$this->load->model('m_login');
-		
 		$this->load->library('Userauth');
 		
 	}
 
 	public function index()
-	{
-			$this->load->view('global_login/header_global_login');
-        	$this->load->view('v_login');
-        	$this->load->view('global_login/footer_global_login');
+	{		
+		        
+		$this->load->view('global_login/header_global_login');
+    	$this->load->view('v_login');
+    	$this->load->view('global_login/footer_global_login');
 
 	}
 
@@ -33,8 +33,7 @@ class login extends MY_Controller {
 	{
 		$this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
-
-	
+		
 			
 			$username = $this->input->post('username');
 			$password = $this->input->post('password');

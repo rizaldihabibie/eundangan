@@ -93,12 +93,22 @@ class m_register extends CI_Model {
 	 	return $this->db->delete('verifikasi_user');
 	 }
 
-	// public function reset_pwd($id, $kode)
-	// {
-	// 	$data = array('id_user' => $id,
-	// 	 				'kode_konfirmasi' => $kode);
-	// 	return $this->db->insert('table_reset_pwd', $data);
-	// }
+	public function reset_pwd($id, $kode)
+	{
+		$data = array('id_user' => $id,
+		 				'kode_konfirmasi' => $kode);
+		return $this->db->insert('reset_password', $data);
+	}
+
+	public function find_reset($kode)
+	 {
+	 	return $this->db->get_where('reset_password', array('kode_konfirmasi' => $kode))->row();
+	 }
+
+	public function update_user($id_user, $data)
+	{
+		return $this->db->update('user', $data, array('id_user' => $id_user));
+	}
 
 	// // public function username_konflik($username)
 	// // {
@@ -271,10 +281,7 @@ class m_register extends CI_Model {
 	// 	return $this->db->update('user', $data, array('id_user' => $id_user));
 	// }
 
-	// public function update_user($id_user, $data)
-	// {
-	// 	return $this->db->update('user', $data, array('id_user' => $id_user));
-	// }
+	
 
 	// public function delete($id_user)
 	// {
@@ -307,10 +314,7 @@ class m_register extends CI_Model {
 	//  }
 
 	
-	// public function find_reset($kode)
-	//  {
-	//  	return $this->db->get_where('table_reset_pwd', array('kode_konfirmasi' => $kode))->row();
-	//  }
+	
 	// public function reset_member($id_user)
 	// {
 	// 	return $this->db->update('user', array('aktif' => 1), array('id_user' => $id_user));

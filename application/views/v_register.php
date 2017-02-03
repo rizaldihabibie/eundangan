@@ -125,14 +125,7 @@
                   endif?>
                   <input type="number" name="telepon" class="form-control" placeholder="Nomor Telepon" value="<?php echo $TELEPO; ?>" required>
                 </div>
-                <div class="form-group">
-                  <?php if ($this->session->flashdata('KELAMIN')):
-                  $KELAMIN = $this->session->flashdata('KELAMIN');
-                  else :
-                  $KELAMIN="";
-                  endif?>
-                  <input type="text" name="jenis_kelamin" class="form-control" placeholder="Jenis Kelamin" value="<?php echo $KELAMIN; ?>" required>
-                </div>
+                
                 <div class="form-group">
                   <?php if ($this->session->flashdata('USERNAM')):
                   $USERNAM = $this->session->flashdata('USERNAM');
