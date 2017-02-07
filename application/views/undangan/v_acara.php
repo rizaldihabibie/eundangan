@@ -64,6 +64,12 @@
                     <div class="fa fa-info-circle"></div>&nbsp;<?php echo $this->session->flashdata('tempat_akad'); ?>
                   </div>
                   <?php endif; ?>
+                  <?php if($this->session->flashdata('message')): ?>
+                  <div class="alert alert-success alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <div class="fa fa-check"></div>&nbsp;<?php echo $this->session->flashdata('message'); ?>
+                  </div>
+                  <?php endif; ?>
                   <br>
                   
                   <h4>AKAD NIKAH</h4><hr>
@@ -72,8 +78,19 @@
                       <p>Tanggal :</p>
                     </div>
                     <div class="col-lg-9">
-                        
-                      <input type="text" name="tanggal_akad" id="tanggal_akad" class="form-control" required>
+                      <input type="text" name="tanggal_akad" class="form-control datepick" placeholder="tanggal akad" required>
+
+                      <!-- <input type="text" name="tanggal_akad" id="tanggal_akad" class="form-control" required> -->
+                      
+                    </div><br>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-lg-3">
+                      <p>Jam :</p>
+                    </div>
+                    <div class="col-lg-9">
+                      
+                      <input type="text" name="jam_akad"  class="form-control" placeholder="Jam Akad" value="" required>
                       
                     </div><br>
                   </div>
@@ -89,14 +106,15 @@
                   </div>
                   <div class="form-group">
                     <div class="col-lg-3">
-                      <p>Jam :</p>
+                      <p>Ini nanti gmap:</p>
                     </div>
                     <div class="col-lg-9">
                       
-                      <input type="text" name="jam_akad"  class="form-control" placeholder="Jam Akad" value="" required>
+                      <input type="text" name="nama_ibu_wanita"  class="form-control" placeholder="Nama Ibu Mempelai Wanita" value="" required>
                       
                     </div><br>
                   </div><br>
+                  
                   <h4>Resepsi Pernikahan</h4><hr>
                   <div class="form-group">
                     <div class="col-lg-3">
@@ -104,7 +122,7 @@
                     </div>
                     <div class="col-lg-9">
                       
-                      <input type="text" name="tanggal_resepsi"  class="form-control" placeholder="Tanggal Resepsi" value="" required>
+                      <input type="text" name="tanggal_resepsi" class="form-control datepick" placeholder="tanggal resepsi" required>
                       
                     </div><br>
                   </div>

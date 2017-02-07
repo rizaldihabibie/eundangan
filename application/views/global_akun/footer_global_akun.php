@@ -89,7 +89,13 @@
         
       });
 
-
+      jQuery('.datepick').each(function(){
+                jQuery(this).datepicker({
+                    format:"dd-mm-yyyy",
+                    autoclose: true,
+                    todayHighlight: true
+                });
+            });
 
 
     </script>
@@ -163,14 +169,17 @@
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/akun/js/bootstrap-datepicker.min.js"></script>
 
         <script type="text/javascript">
-
-            $(document).ready(function () {
-                $('.tanggal_akad').datepicker({
-            format: 'mm/dd/yyyy',
-            todayHighlight: true,
-            autoclose: true,
-        })
+            jQuery(document).ready(function(){
+                var link_base = "<?php echo base_url();?>";
+            
+                jQuery('.datepick').each(function(){
+                    jQuery(this).datepicker({
+                        format:"dd-mm-yyyy",
+                        autoclose: true,
+                        todayHighlight: true
+                    });
+                });
             });
-        </script>
+    </script>
 </body>
 </html>

@@ -58,46 +58,17 @@
                 
                 <div class="box-body">
                   
-                  <?php if($this->session->flashdata('telepon_konfirm')): ?>
-                  <div class="alert alert-danger alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <div class="fa fa-info-circle"></div>&nbsp;<?php echo $this->session->flashdata('telepon_konfirm'); ?>
-                  </div>
-                  <?php endif; ?>
-                  <?php if($this->session->flashdata('telepon')): ?>
-                  <div class="alert alert-danger alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <div class="fa fa-info-circle"></div>&nbsp;<?php echo $this->session->flashdata('telepon'); ?>
-                  </div>
-                  <?php endif; ?>
+                  
                   <?php if($this->session->flashdata('message')): ?>
                   <div class="alert alert-success alert-dismissible" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <div class="fa fa-info"></div>&nbsp;<?php echo $this->session->flashdata('message'); ?>
+                    <div class="fa fa-check"></div>&nbsp;<?php echo $this->session->flashdata('message'); ?>
                   </div>
                   <?php endif; ?>
                   <?php if($this->session->flashdata('warning')): ?>
                   <div class="alert alert-danger alert-dismissible" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <div class="fa fa-info-circle"></div>&nbsp;<?php echo $this->session->flashdata('warning'); ?>
-                  </div>
-                  <?php endif; ?>
-                  <?php if($this->session->flashdata('username')): ?>
-                  <div class="alert alert-danger alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <div class="fa fa-info-circle"></div>&nbsp;<?php echo $this->session->flashdata('username'); ?>
-                  </div>
-                  <?php endif; ?>
-                  <?php if($this->session->flashdata('username_konfirm')): ?>
-                  <div class="alert alert-danger alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <div class="fa fa-info-circle"></div>&nbsp;<?php echo $this->session->flashdata('username_konfirm'); ?>
-                  </div>
-                  <?php endif; ?>
-                  <?php if($this->session->flashdata('password')): ?>
-                  <div class="alert alert-danger alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <div class="fa fa-info-circle"></div>&nbsp;<?php echo $this->session->flashdata('password'); ?>
                   </div>
                   <?php endif; ?>
                   <br>
