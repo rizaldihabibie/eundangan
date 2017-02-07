@@ -23,9 +23,9 @@
 						              			<h2><span style="color:  #003399"><center>Email ubah kata sandi</center></span></h2> 
 						              			<hr>
 						              			<p>
-									               	Saat ini kami telah mengirimkan sebuah email yang berisi petunjuk mengubah kata sandi akun Anda. 
+									               	Saat ini kami telah mengirimkan sebuah email yang berisi petunjuk mengubah kata sandi akun anda. 
 									               	<br><h3><?php echo $this->session->userdata('username');?></h3>
-									               	 Silakan periksa kembali folder kotak masuk atau folder spam di email Anda. 
+									               	 Silakan periksa kembali folder kotak masuk atau folder spam di email anda. 
 						              			</p>
 						              			
 						          </div>

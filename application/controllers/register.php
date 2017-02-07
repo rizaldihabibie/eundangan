@@ -105,7 +105,7 @@ class register extends CI_Controller {
 				            $body = 'Halo ' . $list->nama . ', <br> Terimakasih telah menjadi member Jadimanten. Untuk menyelesaikan proses pendaftaran, mohon verifikasi akun anda. <br>Klik link dibawah ini untuk verifikasi : <br><br> ' . base_url('register/aktivasi_berhasil/' . $kode);
 				          
 				            $result = $this->email
-				                ->from('danieldistance007@gmail.com')
+				                ->from('cs@niscalindo.com')
 				                // ->reply_to('yoursecondemail@somedomain.com')    // Optional, an account where a human being reads.
 				                ->to($username)
 				                ->subject($subject)
