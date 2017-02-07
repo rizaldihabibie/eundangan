@@ -8,6 +8,11 @@ class m_undangan extends CI_Model
 		return $result;
 	}
 
+	function addAcara($data){
+		$result = $this->db->update('undangan', $data);
+		return $result;
+	}
+
 }
 
 ?>

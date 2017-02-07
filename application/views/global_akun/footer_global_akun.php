@@ -62,10 +62,10 @@
     <!--/#footer-->
 
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/akun/js/jquery.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>assets/akun/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/akun/js/lightbox.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/akun/js/wow.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/akun/js/main.js"></script>
+
     <script type="text/javascript">
       $(document).ready( function(){
         var link_base = "<?php echo base_url();?>";
@@ -89,7 +89,11 @@
         
       });
 
+
+
+
     </script>
+    
     <script>
             $(function(){
                 $("#file-simple").fileinput({
@@ -120,7 +124,7 @@
         
     <!-- START SCRIPTS -->
         <!-- START PLUGINS -->
-        <script type="text/javascript" src="<?php echo base_url(); ?>assets/admin/js/plugins/jquery/jquery.min.js"></script>
+        <!--<script type="text/javascript" src="<?php echo base_url(); ?>assets/admin/js/plugins/jquery/jquery.min.js"></script>-->
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/admin/js/plugins/jquery/jquery-ui.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/admin/js/plugins/bootstrap/bootstrap.min.js"></script>        
         <!-- END PLUGINS -->
@@ -137,7 +141,8 @@
        <!-- <script type="text/javascript" src="<?php echo base_url(); ?>assets/admin/js/plugins/morris/raphael-min.js"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/admin/js/plugins/morris/morris.min.js"></script>   -->    
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/admin/js/plugins/rickshaw/d3.v3.js"></script>
-        <script type="text/javascript" src="<?php echo base_url(); ?>assets/admin/js/plugins/rickshaw/rickshaw.min.js"></script>
+        <!-- Di coment habibie rickshaw-->
+        <!--<script type="text/javascript" src="<?php echo base_url(); ?>assets/admin/js/plugins/rickshaw/rickshaw.min.js"></script>-->
         <!--<script type='text/javascript' src='<?php echo base_url(); ?>assets/admin/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js'></script>
         <script type='text/javascript' src='<?php echo base_url(); ?>assets/admin/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js'></script>             
         <script type='text/javascript' src='<?php echo base_url(); ?>assets/admin/js/plugins/bootstrap/bootstrap-datepicker.js'></script>                  
@@ -152,6 +157,20 @@
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/admin/js/plugins.js"></script>        
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/admin/js/actions.js"></script>
         
-        <script type="text/javascript" src="<?php echo base_url(); ?>assets/admin/js/demo_dashboard.js"></script>
+        <!-- Di coment habibie -->
+       <!-- <script type="text/javascript" src="<?php echo base_url(); ?>assets/admin/js/demo_dashboard.js"></script>-->
+
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/akun/js/bootstrap-datepicker.min.js"></script>
+
+        <script type="text/javascript">
+
+            $(document).ready(function () {
+                $('.tanggal_akad').datepicker({
+            format: 'mm/dd/yyyy',
+            todayHighlight: true,
+            autoclose: true,
+        })
+            });
+        </script>
 </body>
 </html>
