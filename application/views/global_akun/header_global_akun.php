@@ -14,7 +14,7 @@
     <link href="<?php echo base_url(); ?>assets/akun/css/lightbox.css" rel="stylesheet"> 
     <link href="<?php echo base_url(); ?>assets/akun/css/main.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>assets/akun/css/responsive.css" rel="stylesheet">
-    <link href="<?php echo base_url(); ?>assets/datepicker/bootstrap-datepicker3.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/akun/css/datepicker.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
         <script src="js/html5shiv.js"></script>
