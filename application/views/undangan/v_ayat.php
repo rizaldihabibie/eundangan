@@ -30,8 +30,8 @@
             <ul class="nav navbar-stacked">
               <li><a href="<?php echo base_url() ?>undangan/link">Link undangan</a></li>
               <li><a href="<?php echo base_url() ?>undangan/data_mempelai">Data Mempelai</a></li>
-              <li class="active"><a href="<?php echo base_url() ?>undangan/acara">Acara</a></li>
-              <li><a href="<?php echo base_url() ?>undangan/ayat">ayat</a></li>
+              <li><a href="<?php echo base_url() ?>undangan/acara">Acara</a></li>
+              <li class="active"><a href="<?php echo base_url() ?>undangan/ayat">Kata kata ayat</a></li>
               <li><a href="#">Love Stories</a></li>
               <li><a href="#">Album foto</a></li>
               <li><a href="#">Slide show</a></li>
@@ -83,7 +83,7 @@
                     </div>
                     <div class="col-lg-9">
                       
-                      <input type="text" name="tempat_akad"  class="form-control" placeholder="Alamat Akad Nikah" value="" required>
+                      <textarea class="span6" rows="3" placeholder="What's up?" required></textarea>
                       
                     </div><br>
                   </div>
@@ -94,47 +94,6 @@
                     <div class="col-lg-9">
                       
                       <input type="text" name="jam_akad"  class="form-control" placeholder="Jam Akad" value="" required>
-                      
-                    </div><br>
-                  </div><br>
-                  <h4>Resepsi Pernikahan</h4><hr>
-                  <div class="form-group">
-                    <div class="col-lg-3">
-                      <p>Tanggal</p>
-                    </div>
-                    <div class="col-lg-9">
-                      
-                      <input type="text" name="tanggal_resepsi"  class="form-control" placeholder="Tanggal Resepsi" value="" required>
-                      
-                    </div><br>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-lg-3">
-                      <p>Jam</p>
-                    </div>
-                    <div class="col-lg-9">
-                      
-                      <input type="text" name="jam_resepsi"  class="form-control" placeholder="Jam Resepsi" value="" required>
-                      
-                    </div><br>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-lg-3">
-                      <p>Lokasi Resepsi:</p>
-                    </div>
-                    <div class="col-lg-9">
-                      
-                      <input type="text" name="tempat_resepsi"  class="form-control" placeholder="Alamat Resepsi" value="" required>
-                      
-                    </div><br>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-lg-3">
-                      <p>Ini nanti gmap:</p>
-                    </div>
-                    <div class="col-lg-9">
-                      
-                      <input type="text" name="nama_ibu_wanita"  class="form-control" placeholder="Nama Ibu Mempelai Wanita" value="" required>
                       
                     </div><br>
                   </div><br>
