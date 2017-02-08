@@ -167,7 +167,7 @@
        <!-- <script type="text/javascript" src="<?php echo base_url(); ?>assets/admin/js/demo_dashboard.js"></script>-->
 
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/akun/js/bootstrap-datepicker.min.js"></script>
-
+    
         <script type="text/javascript">
             jQuery(document).ready(function(){
                 var link_base = "<?php echo base_url();?>";

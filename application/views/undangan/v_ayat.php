@@ -50,7 +50,7 @@
             <center><h3 class="bold"><span style="color: #FA2600">Data Acara Pernikahan</span></h3></center><hr>
             
           </div>
-          <form method="post" action="<?php echo base_url(); ?>undangan/acara/saveAcara">
+          <form method="post" action="<?php echo base_url(); ?>undangan/ayat/saveAyat">
             <div class="col-md-12">
               <div class="box box-warning">
                 <div class="box-header with-border">
@@ -58,46 +58,49 @@
                 
                 <div class="box-body">
                   
-                  <?php if($this->session->flashdata('tempat_akad')): ?>
+                  <?php if($this->session->flashdata('success')): ?>
                   <div class="alert alert-danger alert-dismissible" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <div class="fa fa-info-circle"></div>&nbsp;<?php echo $this->session->flashdata('tempat_akad'); ?>
+                    <div class="fa fa-info-circle"></div>&nbsp;<?php echo $this->session->flashdata('success'); ?>
+                  </div>
+                  <?php endif; ?>
+                  <br>
+                  <?php if($this->session->flashdata('isi_ayat')): ?>
+                  <div class="alert alert-danger alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <div class="fa fa-info-circle"></div>&nbsp;<?php echo $this->session->flashdata('isi_ayat'); ?>
+                  </div>
+                  <?php endif; ?>
+                  <br>
+                  <?php if($this->session->flashdata('nama_ayat')): ?>
+                  <div class="alert alert-danger alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <div class="fa fa-info-circle"></div>&nbsp;<?php echo $this->session->flashdata('nama_ayat'); ?>
                   </div>
                   <?php endif; ?>
                   <br>
                   
-                  <h4>AKAD NIKAH</h4><hr>
+                  <h4>UNDANGAN</h4><hr>
                   <div class="form-group">
                     <div class="col-lg-3">
-                      <p>Tanggal :</p>
+                      <p>Nama Ayat :</p>
                     </div>
                     <div class="col-lg-9">
                         
-                      <input type="text" name="tanggal_akad" id="tanggal_akad" class="form-control" required>
+                      <input type="text" name="nama_ayat" id="nama_ayat" class="form-control" required>
                       
                     </div><br>
                   </div>
                   <div class="form-group">
                     <div class="col-lg-3">
-                      <p>Lokasi :</p>
+                      <p>Isi Ayat :</p>
                     </div>
                     <div class="col-lg-9">
                       
-                      <textarea class="span6" rows="3" placeholder="What's up?" required></textarea>
+                      <textarea class="form-control" rows="3" name="isi_ayat" required></textarea>
                       
-                    </div><br>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-lg-3">
-                      <p>Jam :</p>
-                    </div>
-                    <div class="col-lg-9">
-                      
-                      <input type="text" name="jam_akad"  class="form-control" placeholder="Jam Akad" value="" required>
-                      
-                    </div><br>
-                  </div><br>
-                  
+                    </div><br>    
+                    <br>              
                 </div>
                 <!-- /.box-body --><br>
                 <div class="col-lg-2"></div>

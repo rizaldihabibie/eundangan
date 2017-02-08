@@ -123,37 +123,31 @@ class ayat extends CI_Controller {
 
     }
 
-    public function saveAcara(){
-			$tanggal_akad = $this->input->post('tanggal_akad');
-			$tanggal_resepsi = $this->input->post('tanggal_resepsi');
-			$tempat_akad = $this->input->post('tempat_akad');
-			$tempat_resepsi = $this->input->post('tempat_resepsi');
-			$jam_akad = $this->input->post('jam_akad');
-			$jam_resepsi = $this->input->post('jam_resepsi');
+    public function saveAyat(){
 
-			$tempat ="/^.{6,}$/";
+			$nama_ayat = $this->input->post('nama_ayat');
+			$isi_ayat = $this->input->post('isi_ayat');
 
-			if (!preg_match($tempat, $tempat_akad)) {
-					$this->session->set_flashdata('tempat_akad', 'Tempat Akad Belum Diisi');
-					redirect(base_url('undangan/acara'));
+			$formatAyat ="/^.{5,}$/";
 
-			}else if(!preg_match($tempat, $tempat_resepsi)){
-					$this->session->set_flashdata('tempat_resepsi', 'Tempat Resepsi Belum Diisi');
-					redirect(base_url('undangan/acara'));
+			if (!preg_match($formatAyat, $isi_ayat)) {
+					$this->session->set_flashdata('isi_ayat', 'Isi ayat tidak sesuai');
+					redirect(base_url('undangan/ayat'));
+
+			}else if(!preg_match($formatAyat, $nama_ayat)){
+					$this->session->set_flashdata('nama_ayat', 'Nama ayat tidak sesuai');
+					redirect(base_url('undangan/ayat'));
 			}else{
 				$data = array(
 							'id_user' => $this->session->userdata('SESS_AKUN_ID_USER'),
-							'tempat_akad' => $tempat_akad,
-							'tempat_resepsi' => $tempat_resepsi,
-							'tanggal_akad' => $tanggal_akad,
-							'tanggal_resepsi' => $tanggal_resepsi,
-							'jam_akad' => $jam_akad,
-							'jam_resepsi' => $jam_resepsi
+							'nama_ayat' => $nama_ayat,
+							'isi_ayat' => $isi_ayat
 							);
 
-				$success = $this->m_undangan->addacara($data);
+				$success = $this->m_undangan->addayat($data);
 				if($success){
-					redirect(base_url('undangan/acara'));
+					$this->session->set_flashdata('success', 'data berhasil di simpan');
+					redirect(base_url('undangan/ayat'));
 				}
 			}
 			

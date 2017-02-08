@@ -13,6 +13,11 @@ class m_undangan extends CI_Model
 		return $result;
 	}
 
+	function addAyat($data){
+		$result = $this->db->update('undangan', $data);
+		return $result;
+	}
+
 }
 
 ?>
