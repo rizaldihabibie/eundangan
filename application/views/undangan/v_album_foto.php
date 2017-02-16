@@ -58,7 +58,6 @@
                 </div>
                 
                 <div class="box-body">
-                  <?php echo $error;?>
                   <?php if($this->session->flashdata('success')): ?>
                   <div class="alert alert-danger alert-dismissible" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -66,17 +65,10 @@
                   </div>
                   <?php endif; ?>
                   <br>
-                  <?php if($this->session->flashdata('isi_ayat')): ?>
+                  <?php if($this->session->flashdata('error')): ?>
                   <div class="alert alert-danger alert-dismissible" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <div class="fa fa-info-circle"></div>&nbsp;<?php echo $this->session->flashdata('isi_ayat'); ?>
-                  </div>
-                  <?php endif; ?>
-                  <br>
-                  <?php if($this->session->flashdata('nama_ayat')): ?>
-                  <div class="alert alert-danger alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <div class="fa fa-info-circle"></div>&nbsp;<?php echo $this->session->flashdata('nama_ayat'); ?>
                   </div>
                   <?php endif; ?>
                   <br>
@@ -86,10 +78,29 @@
                     <div class="col-lg-3">
                       <p>Foto :</p>
                     </div>
-                    <div class="col-lg-9">
-                        
-                      <input type="file" name="foto" class="form-control" required>
-                      
+                    <div class="col-lg-6">
+                      <input type="file" name="foto1" class="form-control" required>
+                    </div><br>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-lg-3">
+                    </div>
+                    <div class="col-lg-6">
+                      <input type="file" name="foto2" class="form-control" required>
+                    </div><br>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-lg-3">
+                    </div>
+                    <div class="col-lg-6">
+                      <input type="file" name="foto3" class="form-control" required>
+                    </div><br>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-lg-3">
+                    </div>
+                    <div class="col-lg-6">
+                      <input type="file" name="foto4" class="form-control" required>
                     </div><br>
                   </div>
                 <!-- /.box-body --><br>

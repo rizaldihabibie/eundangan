@@ -21,6 +21,7 @@ class foto extends CI_Controller {
 		$this->load->model('m_login');
 		$this->load->model('m_member');
 		$this->load->model('m_undangan');
+		$this->load->model('m_foto');
 		
 	}
 
@@ -133,18 +134,59 @@ class foto extends CI_Controller {
 
                 $this->load->library('upload', $config);
 
-                if ( ! $this->upload->do_upload('foto'))
+                $data = array();
+                $data[0] = 'foto1';
+                $data[1] = 'foto2';
+                $data[2] = 'foto3';
+                $data[3] = 'foto4';
+
+                $daftarNamaFoto = array();
+
+                $jml = count($data);
+                $success = true;
+                $error = "";
+                for($i = 0; $i<$jml; $i++){
+                	$fileName = $_FILES[$data[$i]]['name'];
+                	$_FILES[$data[$i]]['name'] = $this->session->userdata('SESS_AKUN_USER_NAME').$fileName;
+                	 if ( ! $this->upload->do_upload($data[$i])){
+                	 	$success = false;
+                	 	$error = $this->upload->display_errors();
+                	 	break;
+                	 }else{
+                	 	$fileName = $_FILES[$data[$i]]['name'];
+                	 	$daftarNamaFoto[$i] = $fileName;
+                	 }
+
+                }
+
+                if ( !$success)
                 {
-                        $error = array('error' => $this->upload->display_errors());
+                       
+                        $this->session->set_flashdata('error', $error);
                         $this->load->view('global_akun/header_global_akun');
-	        			$this->load->view('undangan/v_album_foto', $error);
+	        			$this->load->view('undangan/v_album_foto');
 	        			$this->load->view('global_akun/footer_global_akun');
                         
                 }
                 else
                 {
+                		$dataFoto = array();
+                		$jml = count($daftarNamaFoto);
+                		$saveData = array();
+                		for($i = 0; $i<$jml; $i++){
+                			$dataFoto['id_user'] = $this->session->userdata('SESS_AKUN_USER_NAME');
+                			$dataFoto['nama_file'] = $daftarNamaFoto[$i];
+                			$saveData[$i] = $dataFoto;
+                		}
+
+                		if($this->m_foto->addFoto($saveData)){
+                			$this->session->set_flashdata('success', 'data berhasil di simpan');
+                		}else{
+                			$this->session->set_flashdata('error', "$error saving db");
+                		}
+
                         $data = array('upload_data' => $this->upload->data());
-                        $this->session->set_flashdata('success', 'data berhasil di simpan');
+                        
                         $this->load->view('global_akun/header_global_akun');
 	        			$this->load->view('undangan/v_album_foto');
 	        			$this->load->view('global_akun/footer_global_akun');
