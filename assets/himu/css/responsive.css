@@ -19,6 +19,12 @@
 		width:100%;
 		margin-bottom:15px
 	}
+
+	.event .tab-content .pull-left.media-object{
+		float:inherit;
+		width:100%;
+		margin-bottom:15px
+	}
 	.single-member{
 		height:515px;
 		margin-bottom:30px
@@ -65,7 +71,11 @@
 	}
 	#about-us p{
 		font-size:14px
-	}.nav-tabs li{
+	}
+	#event p{
+		font-size:14px
+	}
+	.nav-tabs li{
 		width:33%
 	}
 	.nav-tabs li a{
@@ -75,6 +85,11 @@
 		display:block
 	}
 	.about-us .tab-content .pull-left.media-object{
+		background-color:#F6F6F6;
+		display:block;float:inherit!important;margin-right:0;
+		width:100%
+	}
+	.event .tab-content .pull-left.media-object{
 		background-color:#F6F6F6;
 		display:block;float:inherit!important;margin-right:0;
 		width:100%
@@ -107,7 +122,7 @@
 	#gmap iframe{
 		height:225px
 	}
-	.contact-address{
+	.rsvp-address{
 		padding-left:10px;
 		padding-right:10px
 	}
@@ -160,6 +175,9 @@
 	#about-us p{
 		font-size:14px
 	}
+	#event p{
+		font-size:14px
+	}
 	.nav-tabs li{
 		width:33%
 	}
@@ -170,6 +188,13 @@
 		display:block
 	}
 	.about-us .tab-content .pull-left.media-object{
+		background-color:#F6F6F6;
+		display:block;
+		float:inherit!important;
+		margin-right:0;
+		width:100%
+	}
+	.event .tab-content .pull-left.media-object{
 		background-color:#F6F6F6;
 		display:block;
 		float:inherit!important;
@@ -198,7 +223,7 @@
 	#gmap iframe{
 		height:225px
 	}
-	.contact-address{
+	.rsvp-address{
 		padding-left:10px;
 		padding-right:10px
 	}

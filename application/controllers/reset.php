@@ -76,7 +76,8 @@ class reset extends CI_Controller {
 
 				            // Get full html:
 				            // $body = 'Halo, <br>Anda telah melakukan permohonan lupa password untuk akun anda. Jika anda merasa tidak melakukan permohonan lupa password, abaikan saja Email ini.<br> Silahkan klik link dibawah ini untuk memasukkan password baru anda :<br><br> '. base_url('register/reset_password/' . $kode);
-				            $body = $this->load->view('v_emailresetpwd',' ', TRUE);
+				            $data['url_register'] = base_url('register/reset_password/').$kode;
+				            $body = $this->load->view('v_emailresetpwd',$data, TRUE);
 				   
 
 

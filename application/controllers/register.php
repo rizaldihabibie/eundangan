@@ -200,25 +200,34 @@ class register extends CI_Controller {
 
 	public function reset_password ($kode)
 	{	
-		
+		// echo var_dump($kode);exit();
 		if (is_null($kode)) {
-			// var_dump($kode);exit();
+			// echo var_dump($kode);exit();
 				redirect(base_url());
 		} else {
 			$cekApaAda = $this->m_register->find_reset($kode);
-			
-			
-			if ($cekApaAda) {
-				$this->form_validation->set_rules('password', 'Password', 'trim|xss_clean');
-				$this->form_validation->set_rules('konfirm_password', 'Konfirmasi Password', 'trim|xss_clean');
+			if ($cekApaAda) {				
+				// $this->session->set_flashdata('kode_reset', $kode);
+				$data['kode'] = $kode;
+				$this->load->view('global_home/header_global_home');
+				$this->load->view('v_ubah_password', $data);
+				$this->load->view('global_home/footer_global_home');
+			} else {
+				echo 'Gagal Ginjal';
+			}	
 
-				if ($this->form_validation->run() === FALSE) {
-					$data['kode'] = $kode;
-					// var_dump($data['kode']);exit();
-					$this->load->view('global_home/header_global_home');
-					$this->load->view('v_ubah_password', $data);
-					$this->load->view('global_home/footer_global_home');
-				} else {
+		}
+	}
+
+	public function act_reset_password($kode){
+
+				// $this->form_validation->set_rules('password', 'Password', 'trim|xss_clean');
+				// $this->form_validation->set_rules('konfirm_password', 'Konfirmasi Password', 'trim|xss_clean');
+
+				// if ($this->form_validation->run() == FALSE) {
+				// 	// redirect('register/reset_password/'.$kode);
+				// 	echo "error 1";
+				// }else{
 					$password= $this->input->post('password');
 					$konfirm_password = $this->input->post('konfirm_password');
 
@@ -232,7 +241,8 @@ class register extends CI_Controller {
 							$this->session->set_flashdata('password', 'Password dan konfirmasi password tidak cocok');
 						}
 
-						redirect(base_url('register/reset_password/' . $kode));
+					// echo "error 2";
+						redirect('register/reset_password/'.$kode);
 					}else{
 
 						$data = array(
@@ -249,15 +259,55 @@ class register extends CI_Controller {
 							$this->session->set_flashdata('message', 'data anda gagal dimasukkan');
 
 							// arahkan ke form untuk diisi kembali
-							redirect(base_url('ubah_password'));
-						}
-					}
-				}
-			} else {
-				echo 'Gagal Ginjal';
-			}
-		}
+							redirect('ubah_password');
+						}					
+					}	
+				// }
+
+
+				// 	$data['kode'] = $kode;
+				// 	// var_dump($data['kode']);exit();
+				// 	$this->load->view('global_home/header_global_home');
+				// 	$this->load->view('v_ubah_password', $data);
+				// 	$this->load->view('global_home/footer_global_home');
+				// } else {
+				// // echo "string";
+				// 	$password= $this->input->post('password');
+				// 	$konfirm_password = $this->input->post('konfirm_password');
+
+				// 	$polapassword ="/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{5,}$/";
+
+				// 	if($this->input->post('password') !== $this->input->post('konfirm_password') || !preg_match($polapassword, $this->input->post('password'))){
+				// 		if (!preg_match($polapassword, $this->input->post('password'))) {
+				// 			$this->session->set_flashdata('password_konfirm', 'Password minimal 5 digit dan terdiri dari huruf, angka serta beberapa karakter "!@#$%"');
+				// 		}
+				// 		if ($this->input->post('password') !== $this->input->post('konfirm_password')) {
+				// 			$this->session->set_flashdata('password', 'Password dan konfirmasi password tidak cocok');
+				// 		}
+
+				// 		redirect('register/reset_password/'.$kode);
+				// 	}else{
+
+				// 		$data = array(
+				// 			'password' => md5($password)
+				// 		);
+				// 		if ($this->m_register->update_user($cekApaAda->id_user, $data)) {
+				// 			// set message berhasil
+				// 			$this->session->set_flashdata('message', 'data anda berhasil dimasukkan');
+
+				// 			// arahkan ke list
+				// 			redirect(base_url('register/reset_sukses'));
+				// 		} else {
+				// 			// set message gagal
+				// 			$this->session->set_flashdata('message', 'data anda gagal dimasukkan');
+
+				// 			// arahkan ke form untuk diisi kembali
+				// 			redirect('ubah_password');
+				// 		}
+				// 	}
 	}
+
+
 	public function reset_sukses()
 	{
 

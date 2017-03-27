@@ -21,14 +21,14 @@
 	4. About Us
 	5. Service
 	6. Our Team
-	7. Portfolio
+	7. portfolio
 	8. Clients
 	9. Our Blog
 	10. Contact
 	11. Footer
 	12. Carousel Effect
 	13. Isotope
-	14. Portfolio Hover effect
+	14. portfolio Hover effect
 -------------------------------------
 =====================================
 */
@@ -38,7 +38,7 @@
 ======Typography=====
 ======================*/
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic);
-
+@import url('https://fonts.googleapis.com/css?family=Arizonia|Berkshire+Swash|Alex+Brush|Dancing+Script|Petit+Formal+Script|Coming+Soon|Eagle+Lake|Tangerine|Merienda|Great+Vibes|Merienda+One|Short+Stack&subset=latin-ext');
 body {
 	font-family: 'Roboto', sans-serif;
 	position: relative;
@@ -66,7 +66,7 @@ a {
 	-moz-transition: 300ms;
 	-o-transition: 300ms;
 	transition: 300ms;
-	color:#fc7700;
+	color:#F6978A;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -74,10 +74,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .slider-btn {
-	background-color:#fc7700;
+	background-color:#F6978A;
 	color: #FFF;
-	-webkit-box-shadow: inset 0 0 0 2px #fc7700;
-	box-shadow: inset 0 0 0 2px #fc7700;
+	-webkit-box-shadow: inset 0 0 0 2px #F6978A;
+	box-shadow: inset 0 0 0 2px #F6978A;
 	text-transform: uppercase;
 	width: 190px;
 	text-align: center;
@@ -270,7 +270,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #navigation .navbar-nav.navbar-right li a {
-	color: #43484E;
+	color: #B9B655;
 	font-family: 'Roboto',sans-serif;
 	font-size: 14px;
 	padding: 0;
@@ -286,7 +286,7 @@ h1, h2, h3, h4, h5, h6 {
 #navigation .navbar-inverse .navbar-nav  .active  a:focus, 
 #navigation .navbar-nav.navbar-right li a:hover {
 	color: #fff;
-	background-color: #fc7700;
+	background-color: #f6978a;
 }
 
 
@@ -294,7 +294,7 @@ h1, h2, h3, h4, h5, h6 {
 ====Main Slider CSS=====
 =======================*/
 .home-pattern {
-	height:100%;
+	/*height:100%;
 	position:absolute;
 	width:100%;
 	z-index:1;
@@ -302,7 +302,7 @@ h1, h2, h3, h4, h5, h6 {
 	bottom:0;
 	background-image:url(../images/home-pattern.png);
 	background-repeat:repeat;
-	opacity:0.2;
+	opacity:0;*/
 }
 
 #home{
@@ -316,6 +316,7 @@ h1, h2, h3, h4, h5, h6 {
 	height: 100%;
 	background-position: 50% 50%;
 	background-repeat:no-repeat;
+
 }
 
 #main-carousel .carousel-indicators { 
@@ -357,28 +358,72 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #main-carousel .carousel-inner h2 {
-	color: #f6f6f6;
-	display: inline-block;
-	font-family: roboto;
-	font-size: 55px;
+	font-family: 'Petit Formal Script', cursive;
+	font-size: 70px;
 	font-weight: 800;
 	margin-bottom: 40px;
-	text-shadow: none;
-	text-transform: uppercase;
+	text-shadow: 4px 4px #222;
+	/*text-transform: uppercase;*/
 }
 
 #main-carousel .carousel-inner h2 span{
   color:#7ab700;
 }
 
+#main-carousel .carousel-inner h3 {
+	font-family: 'Great Vibes', cursive;
+	font-size: 60px;
+	font-weight: 800;
+	margin-bottom: 40px;
+	text-shadow: 4px 4px #222;
+	/*text-transform: uppercase;*/
+}
+
+#main-carousel .carousel-inner h3 span{
+  color:#7ab700;
+}
+
+/*#main-carousel .carousel-inner h1 {
+	font-family: 'Merienda One', serif;
+	font-size: 90px;
+	font-weight: 1000;
+	margin-bottom: 60px;
+	text-shadow: #df5d60;
+	text-transform: uppercase;
+	text-shadow:4px 4px #222;
+}*/
+
+#main-carousel .carousel-inner h1 {
+	font-family: 'Tangerine', serif;
+	font-size: 105px;
+	font-weight: 300;
+	margin-bottom: 0;
+	margin-top: 0;
+	text-shadow: #df5d60;
+	/*text-transform: uppercase;*/
+	text-shadow:4px 4px #222;
+}
+
+#main-carousel .carousel-inner h1 span{
+  color:#7ab700;
+}
+
 #main-carousel .carousel-inner p {
-	color: #f6f6f6;
-	font-family: roboto;
-	font-size: 24px;
+	font-family: 'Petit Formal Script', cursive;
+	font-size: 60px;
 	font-weight: 300;
 	margin-bottom: 59px;
 	margin-top: 0;
-	text-shadow:none;
+	text-shadow:2px 3px #B9B655;
+}
+
+#main-carousel .carousel-inner h4 {
+	font-family: 'Merienda', cursive;
+	font-size: 35px;
+	font-weight: 300;
+	margin-bottom: 0;
+	margin-top: 0;
+	text-shadow:2px 3px #222;
 }
 
 #main-carousel .carousel-left{
@@ -391,18 +436,18 @@ h1, h2, h3, h4, h5, h6 {
 
 #main-carousel:hover .carousel-left{
 	left:0px;
-	-webkit-transition: 300ms;
-	-moz-transition: 300ms;
-	-o-transition: 300ms;
-	transition: 300ms;
+	-webkit-transition: 1500ms;
+	-moz-transition: 1500ms;
+	-o-transition: 1500ms;
+	transition: 1500ms;
 }
 
 #main-carousel:hover .carousel-right{
 	right:0px;
-	-webkit-transition: 300ms;
-	-moz-transition: 300ms;
-	-o-transition: 300ms;
-	transition: 300ms;
+	-webkit-transition: 1500ms;
+	-moz-transition: 1500ms;
+	-o-transition: 1500ms;
+	transition: 1500ms;
 }
 
 #main-carousel .carousel-left,
@@ -415,10 +460,10 @@ h1, h2, h3, h4, h5, h6 {
 	position: absolute;
 	margin-top: -60px;
 	text-align: center;
-	-webkit-transition: 300ms;
-	-moz-transition: 300ms;
-	-o-transition: 300ms;
-	transition: 300ms;
+	-webkit-transition: 1500ms;
+	-moz-transition: 1500ms;
+	-o-transition: 1500ms;
+	transition: 1500ms;
 }
 
 .carousel-right {
@@ -458,21 +503,22 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 600;
 	padding-bottom:10px;
 	text-align: center;
-	text-transform: uppercase;
-	position:relative
+	/*text-transform: uppercase;*/
+	position:relative;
+	text-shadow: 2px 3px #000;
 }
 
 .title-one:after {
-	color: #fc7700;
-	content: "||";
+	color: #FCB4FE;
+	/*content: "||";*/
 	position: absolute;
 	right: -40px;
 	top: -2px;
 }
 
 .title-one:before {
-	color: #fc7700;
-	content: "||";
+	color: #FCB4FE;
+	/*content: "||";*/
 	left: -40px;
 	position: absolute;
 	top: 0;
@@ -511,14 +557,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .about-us .nav-tabs li a {
 	border-top:2px solid #f6f6f6;
-	color:#fc7700
+	color:#FCB4FE
 }
 
 .about-us .nav-tabs li.active a, 
 .about-us .nav-tabs li.active a:hover, 
 .about-us .nav-tabs li.active a:focus {
 	border-radius: 0;
-	border-top: 2px solid #fc7700;
+	border-top: 2px solid #FCB4FE;
 	color: #333333;
 }
 
@@ -557,7 +603,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight:bold;
 	font-size:13px;
 	color:#fff;
-	background-color:#fc7700;
+	background-color:#FCB4FE;
 }
 
 .skillbar-title span {
@@ -567,7 +613,7 @@ h1, h2, h3, h4, h5, h6 {
 	margin-top: 0;
 	text-align: left;
 	display:block;
-	background-color:#fc7700;
+	background-color:#FCB4FE;
 	padding:0 15px;
 	height:35px;
 	line-height:35px;
@@ -577,7 +623,7 @@ h1, h2, h3, h4, h5, h6 {
 .skillbar-bar {
 	height:35px;
 	width:0px;
-	background-color:#fc7700;
+	background-color:#FCB4FE;
 	box-shadow:0 1px 0 0 #333333;
 }
 
@@ -598,26 +644,49 @@ h1, h2, h3, h4, h5, h6 {
 ======Service CSS=====
 ======================*/
 
-#services {
-  background-image: url("../images/services/service-bg.jpg");
+#event {
+  background-image: url("../images/services/bg2.png");
+  
+  top: 0;
   color:#fff;
   text-align:center;
-  background-color:	#0A0A13;
+  /*background-color:	#0A0A13;*/
+  /*opacity: 0.5;*/
+
+  	/*height:100%;
+	position:absolute;
+	width:100%;
+	z-index:1;
+	left:0;
+	bottom:0;
+	background-image: url("../images/services/mesjid.jpg");
+	opacity: 0.4;
+	background-repeat:no-repeat;
+    background-size:cover;
+    background-position: center center;*/
+    background-attachment: fixed;
+   background-color: #464646;
+	
+
+}
+ 
+
+.event {
+	/*display:block;*/
+	/*overflow:hidden;*//*
+	margin-top:50px;
+	opacity: 0.5;*/
+
+
 }
 
-.services {
-	display:block;
-	overflow:hidden;
-	margin-top:50px
-}
-
-#services h2{
+#event h2{
   color: #fff;
   border-color: #fff;
   margin-bottom:35px
 }
 
-.single-service {
+.single-event {
 	background-color: rgba(0, 0, 0, 0.39);
 	padding:25px;
 	transition: all 0.9s ease 0s;
@@ -626,11 +695,11 @@ h1, h2, h3, h4, h5, h6 {
 	-o-transition: all 0.9s ease 0s;
 }
 
-.single-service p {
+.single-event p {
 	text-align:justify;
 }
 
-.single-service i {
+.single-event i {
 	text-align:center;
 	font-size:80px;
 	background-color: #fff;
@@ -639,19 +708,25 @@ h1, h2, h3, h4, h5, h6 {
 	height: 150px;
 	line-height: 150px;
 	width: 150px;
-	color:#43484E;
+	color:#B9B655;
 	transition: all 0.9s ease 0s;
 	-moz-transition: all 0.9s ease 0s;
 	-webkit-transition: all 0.9s ease 0s;
 	-o-transition: all 0.9s ease 0s;
 }
 
-.single-service:hover {
-	background-color: #fc7700;
+/*.single-event img{
+	position: absolute;
+	 -webkit-filter: blur(10px); 
+    filter: blur(10px);
+}*/
+
+.single-event:hover {
+	background-color: #FCB4FE;
 }
 
-.single-service:hover i {
-	color:#fc7700;
+.single-event:hover i {
+	color:#FCB4FE;
 	-moz-transform: scale(1.1) rotate(360deg);
 	-webkit-transform: scale(1.1) rotate(360deg);
 	-o-transform: scale(1.1) rotate(360deg);
@@ -668,17 +743,17 @@ h1, h2, h3, h4, h5, h6 {
 	position:relative
 }
 
-#our-team {
+#couple {
 	background-color:#f6f6f6;
 	color:#43484E;
 }
 
-#our-team h2 {
+#couple h2 {
 	color:#43484E;
 	margin-bottom:35px;
 }
 
-#our-team .team-members {
+#couple .team-members {
 	padding:0;
 	margin-top:55px;
 	display:block;
@@ -704,7 +779,7 @@ h1, h2, h3, h4, h5, h6 {
 	text-align:center
 }
 
-#our-team .socials i {
+#couple .socials i {
 	background-color:#fff;
 	border-radius: 50%;
 	color: #43484E;
@@ -725,38 +800,42 @@ h1, h2, h3, h4, h5, h6 {
 	transition: all 0.5s ease-in-out;  
 }
 
-#our-team .socials a i:hover {
+#couple .socials a i:hover {
 	opacity:1;
 	color:#fff;
 	border:0
 }
 
-#our-team .socials a .fa-facebook:hover {
+#couple .socials a .fa-facebook:hover {
 	background: #3B5997;	
 }
 
-#our-team .socials a .fa-twitter:hover {
+#couple .socials a .fa-twitter:hover {
   background:#29C5F6
 }
 
-#our-team .socials a .fa-pinterest:hover {
+#couple .socials a .fa-pinterest:hover {
   background:#C61118
 }
 
-#our-team .socials a .fa-dribbble:hover {
+#couple .socials a .fa-dribbble:hover {
   background:#FF5C93
 }
 
-#our-team .socials a .fa-linkedin:hover {
+#couple .socials a .fa-linkedin:hover {
   background:#006DC0
 }
 
-#our-team .socials a .fa-google-plus:hover {
+#couple .socials a .fa-google-plus:hover {
   background:#D13D2F
 }
 
-#our-team .socials a .fa-flickr:hover {
+#couple .socials a .fa-flickr:hover {
   background:#7A797B
+}
+
+#couple .socials a .fa-instagram:hover {
+  background:#f65528
 }
 
 .member-left, .member-right {
@@ -776,7 +855,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /*======================
-======Portfolio CSS=====
+======portfolio CSS=====
 ========================*/
 
 #portfolio {
@@ -809,7 +888,7 @@ h1, h2, h3, h4, h5, h6 {
 .portfolio-filter li a:active , 
 #portfolio 
 .portfolio-filter li .active{
-	border: 1px solid #fc7700;
+	border: 1px solid #FCB4FE;
 	color: #686868;
 	box-shadow: none;
 	-webkit-box-shadow: none;
@@ -926,7 +1005,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mask i:hover{
-	background-color:#fc7700;
+	background-color:#FCB4FE;
 	color:#fff;  
 }
 
@@ -936,26 +1015,26 @@ h1, h2, h3, h4, h5, h6 {
 ======Clients CSS=====
 ======================*/
 
-#clients{
+#wishes{
 	background-image: url("../images/clients/client-bg.jpg");
 	background-color:#0A0A13;
 }
 
-#clients h2 {
+#wishes h2 {
 	margin-bottom:30px;
 	color:#f6f6f6
 }
 
-#clients p {
+#wishes p {
 	color:#fff
 }
 
-#clients-carousel  {
+#wishes-carousel  {
 	margin-top:45px;
 	text-align:center;
 }
 
-#clients-carousel 
+#wishes-carousel 
 .carousel-inner {
 	display:inline-block;
 	width:60%
@@ -973,13 +1052,13 @@ h1, h2, h3, h4, h5, h6 {
 	
 }
 
-#clients-carousel 
+#wishes-carousel 
 .carousel-inner img {
 	border-right:5px solid#eee;
 	padding-right:10px
 }
 
-#clients-carousel 
+#wishes-carousel 
 .carousel-indicators {
 	top: 100%;
 	left: 50%;
@@ -988,11 +1067,11 @@ h1, h2, h3, h4, h5, h6 {
 	width: 100px;
 }
 
-#clients-carousel .item {
+#wishes-carousel .item {
 	background:#43484E
 }
 
-#clients-carousel 
+#wishes-carousel 
 .carousel-indicators li{
 	background: rgba(0, 0, 0, 0);
 	border: 1px solid #fff;
@@ -1003,16 +1082,16 @@ h1, h2, h3, h4, h5, h6 {
 	display: inline-block;
 }
 
-#clients-carousel 
+#wishes-carousel 
 .carousel-indicators {
   margin-top: 20px;
 }
 
-.clients{
+.wishes{
   text-align: center;
 }
 
-.clients h2 {
+.wishes h2 {
 	color: #FFFFFF;
 	font-family: 'Roboto',sans-serif;
 	font-size: 30px;
@@ -1022,7 +1101,7 @@ h1, h2, h3, h4, h5, h6 {
 	margin-top: 0;
 }
 
-.clients p {
+.wishes p {
 	color: #FFFFFF;
 	font-family: 'Roboto',sans-serif;
 	font-size: 14px;
@@ -1031,8 +1110,8 @@ h1, h2, h3, h4, h5, h6 {
 	text-transform: uppercase;
 }
 
-.clients p span{
-	color:#fc7700;
+.wishes p span{
+	color:#FCB4FE;
 }
 
 
@@ -1064,7 +1143,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .single-blog:hover {
-	background-color:#43484E;
+	background-color:#df5d60;
 	color:#fff
 }
 
@@ -1073,7 +1152,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .single-blog:hover.single-blog .btn-primary {
-	background-color:#fc7700;
+	background-color:#df5d60;
 	color:#fff;
 	border-color:#fff;
 	transition: all 0.9s ease 0s;
@@ -1124,14 +1203,93 @@ h1, h2, h3, h4, h5, h6 {
 
 .single-blog .btn-primary {
 	text-transform: uppercase;
-	border: 1px solid #fc7700;
+	border: 1px solid #df5d60;
 	color: #686868;
 	background-color: rgba(255, 255, 255, 0);
-	border-color: #fc7700;
+	border-color: #fff;
 }
 
 .single-blog:hover.single-blog .btn-primary:hover{
-	background-color:#fc7700;
+	background-color:#df5d60;
+	color:#fff;
+}
+
+.single-blog1 {
+	margin-bottom: 30px;
+	background-color:#F7F7F7;
+	padding:25px;
+	transition: all 1s ease 0s;
+	-moz-transition: all 1s ease 0s;
+	-webkit-transition: all 1s ease 0s;
+	-o-transition: all 1s ease 0s;
+	-webkit-box-shadow: 0 2px 0 0 #ddd;
+	box-shadow: 0 2px 0 0 #ddd;
+}
+
+.single-blog1:hover {
+	background-color:#f6978a;
+	color:#fff
+}
+
+.single-blog1:hover.single-blog1 h2 {
+	color:#fff
+}
+
+.single-blog1:hover.single-blog1 .btn-primary {
+	background-color:#f6978a;
+	color:#fff;
+	border-color:#fff;
+	transition: all 0.9s ease 0s;
+	-moz-transition: all 0.9s ease 0s;
+	-webkit-transition: all 0.9s ease 0s;
+	-o-transition: all 0.9s ease 0s;
+}
+
+.single-blog1 img{
+	width:100%;
+	margin-bottom:20px
+}
+
+.single-blog1 h2 {
+	color:#43484E;
+	font-size:24px;
+}
+
+.single-blog1 h2{
+	margin:0;
+	margin-bottom:15px;
+}
+
+.single-blog1 ul {
+	padding:0;
+	overflow:hidden;
+}
+
+.single-blog1 ul li {
+	border-right: 2px solid #999999;
+	float: left;
+	line-height: 10px;
+	list-style: none;
+	margin-right: 10px;
+	padding-right: 10px;
+	font-size: 12px;
+	color:#999;
+}
+
+.single-blog1 ul li:last-child {
+	border:none;
+}
+
+.single-blog1 .btn-primary {
+	text-transform: uppercase;
+	border: 1px solid #f6978a;
+	color: #686868;
+	background-color: rgba(255, 255, 255, 0);
+	border-color: #fff;
+}
+
+.single-blog1:hover.single-blog1 .btn-primary:hover{
+	background-color:#f6978a;
 	color:#fff;
 }
 
@@ -1154,7 +1312,7 @@ h1, h2, h3, h4, h5, h6 {
 ======Contact CSS=====
 ======================*/
 
-#contact {
+#rsvp {
 	overflow:hidden;
 	background-color: #f6f6f6;
 	position:relative;
@@ -1162,36 +1320,26 @@ h1, h2, h3, h4, h5, h6 {
 	border-top:2px solid #ddd
 }
 
-#contact .contact-heading {
+#rsvp .rsvp-heading {
 	padding-bottom:35px;
 	position: relative;
 	z-index: 10;
 }
 
-.contact-details {	
+.rsvp-details {	
 	padding-top:75px;
 }
 
-.pattern {
-	height:100%;
-	position:absolute;
-	width:100%;
-	z-index:1;
-	left:0;
-	bottom:0;
-	background-image:url(../images/pattern.png);
-	background-repeat:repeat;
-	opacity:0.2;
-}
 
 
-.contact-address {
+
+.rsvp-address {
 	background-color: #fff;
 	height:390px;
 	padding-top:85px
 }
 
-.contact-address .social-icons a i {
+.rsvp-address .social-icons a i {
 	border-radius:0;
 	height:30px;
 	line-height:inherit;
@@ -1203,7 +1351,7 @@ h1, h2, h3, h4, h5, h6 {
 	-o-transition: all 1s ease 0s;
 	margin-right:10px
 }
-.contact-address .social-icons i:hover {
+.rsvp-address .social-icons i:hover {
 	transform: scale(.9);
 }
 
@@ -1222,34 +1370,35 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .social-icons a:hover {
-  color: #fc7700;
-  border: 1px solid #fc7700;
+  color: #BC82FD;
+  border: 1px solid #BC82FD;
 }
 
-.contact-address .social-icons, 
-.contact-address address {
+.rsvp-address .social-icons, 
+.rsvp-address address {
 	z-index:2;
 	position:relative
 }
 
-.contact-address  p {
+.rsvp-address  p {
 	font-weight:800;
 	font-size:24px
 }
 
-.contact-address  p span {
-	color:#fc7700;
+.rsvp-address  p span {
+	color:#BC82FD;
 	
 }
 
-#contact-form-section {	
+#rsvp-form-section {	
 	padding:35px;
-	background-color: #FFF; 
+	background-color: #43484E; 
 	height:390px;
+	border-color: 
 }
-#contact-form-section .btn-primary {
-	background-color:#fc7700;
-	border-color:#f6f6f6;
+#rsvp-form-section .btn-primary {
+	background-color:#F6978A;
+	border-color:#Fff;
 	border-radius:0;
 	padding:10px 35px;
 	text-transform:uppercase;
@@ -1260,43 +1409,43 @@ h1, h2, h3, h4, h5, h6 {
   -o-transition: all 0.9s ease 0s;
 }
 
-#contact-form-section .btn-primary:hover {
-	background-color:#43484E
+#rsvp-form-section .btn-primary:hover {
+	background-color:#BC82FD
 }
 
-#contact-form input, 
-#contact-form textarea, 
-#contact-form .btn-primary  {
+#rsvp-form input, 
+#rsvp-form textarea, 
+#rsvp-form .btn-primary  {
 	position:relative;
 	z-index:2;
 }
 
-#contact-form .name-field, 
-#contact-form .mail-field  {
+#rsvp-form .name-field, 
+#rsvp-form .mail-field  {
 	width:49%;
 }
 
-#contact-form .name-field {
+#rsvp-form .name-field {
 	margin-right:2%;	
 	float:left
 }
 
-#contact-form .mail-field {
+#rsvp-form .mail-field {
 	
 }
 
-#contact-form-section .form-control {
+#rsvp-form-section .form-control {
 	border-radius:0;
 	-webkit-box-shadow:none;
 	box-shadow:none;
 }
 
-#contact-form-section textarea {
+#rsvp-form-section textarea {
 	resize:none
 }
 
-#contact-form-section .form-control:focus {
-	border-color: #fc7700;
+#rsvp-form-section .form-control:focus {
+	border-color: #BC82FD;
 	outline: 0;
 	-webkit-box-shadow:none;
 	box-shadow:none;
@@ -1321,7 +1470,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #footer a {
-	color:#fc7700
+	color:#FCB4FE
 }
 
 
@@ -1332,46 +1481,46 @@ h1, h2, h3, h4, h5, h6 {
 
 .carousel.scale .carousel-inner > .item.left > div:nth-child(1),
 .carousel.scale .carousel-inner > .item.right > div:nth-child(1) {
-  -webkit-animation: fadeOutDown 300ms linear 0ms both;
-  animation: fadeOutDown 300ms linear 0ms both;
+  -webkit-animation: fadeOutDown 1500ms linear 0ms both;
+  animation: fadeOutDown 1500ms linear 0ms both;
 }
 .carousel.scale .carousel-inner > .item.next > div:nth-child(1),
 .carousel.scale .carousel-inner > .item.prev > div:nth-child(1) {
-  -webkit-animation: fadeInDown 300ms linear 75ms both;
-  animation: fadeInDown 300ms linear 75ms both;
+  -webkit-animation: fadeInDown 1500ms linear 75ms both;
+  animation: fadeInDown 1500ms linear 75ms both;
 }
 
 .carousel.scale .carousel-inner > .item.left > div:nth-child(2),
 .carousel.scale .carousel-inner > .item.right > div:nth-child(2) {
-  -webkit-animation: fadeOutDown 300ms linear 75ms both;
-  animation: fadeOutDown 300ms linear 75ms both;
+  -webkit-animation: fadeOutDown 1500ms linear 75ms both;
+  animation: fadeOutDown 1500ms linear 75ms both;
 }
 .carousel.scale .carousel-inner > .item.next > div:nth-child(2),
 .carousel.scale .carousel-inner > .item.prev > div:nth-child(2) {
-  -webkit-animation: fadeInDown 300ms linear 150ms both;
-  animation: fadeInDown 300ms linear 150ms both;
+  -webkit-animation: fadeInDown 1500ms linear 150ms both;
+  animation: fadeInDown 1500ms linear 150ms both;
 }
 
 .carousel.scale .carousel-inner > .item.left > div:nth-child(3),
 .carousel.scale .carousel-inner > .item.right > div:nth-child(3) {
-  -webkit-animation: fadeOutDown 300ms linear 150ms both;
-  animation: fadeOutDown 300ms linear 150ms both;
+  -webkit-animation: fadeOutDown 1500ms linear 150ms both;
+  animation: fadeOutDown 1500ms linear 150ms both;
 }
 .carousel.scale .carousel-inner > .item.next > div:nth-child(3),
 .carousel.scale .carousel-inner > .item.prev > div:nth-child(3) {
-  -webkit-animation: fadeInDown 300ms linear 225ms both;
-  animation: fadeInDown 300ms linear 225ms both;
+  -webkit-animation: fadeInDown 1500ms linear 225ms both;
+  animation: fadeInDown 1500ms linear 225ms both;
 }
 
 .carousel.scale .carousel-inner > .item.left > div:nth-child(4),
 .carousel.scale .carousel-inner > .item.right > div:nth-child(4) {
-  -webkit-animation: fadeOutDown 300ms linear 225ms both;
-  animation: fadeOutDown 300ms linear 225ms both;
+  -webkit-animation: fadeOutDown 1500ms linear 225ms both;
+  animation: fadeOutDown 1500ms linear 225ms both;
 }
 .carousel.scale .carousel-inner > .item.next > div:nth-child(4),
 .carousel.scale .carousel-inner > .item.prev > div:nth-child(4) {
-  -webkit-animation: fadeInDown 300ms linear 300ms both;
-  animation: fadeInDown 300ms linear 300ms both;
+  -webkit-animation: fadeInDown 1500ms linear 300ms both;
+  animation: fadeInDown 1500ms linear 300ms both;
 }
 
 
@@ -1431,7 +1580,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /*==================================
-====== Portfolio Hover effect=======
+====== portfolio Hover effect=======
 ====================================*/
 
 
@@ -1529,4 +1678,21 @@ h1, h2, h3, h4, h5, h6 {
    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
    filter: alpha(opacity=100);
    opacity: 1;
+}
+
+/* Styling Button Back to Top */
+.go-top {
+  position: fixed;
+  bottom: 25px;
+  right: 30px;
+  text-decoration: none;
+  color: #fff;
+  padding: 3px 3px;
+  background: rgba(0, 0, 0, 0.2);
+  font-size: 25px;
+  display: none;
+}
+
+.go-top:hover {
+  background: rgba(0, 0, 0, 0.5); 
 }

@@ -108,7 +108,7 @@
                       <table width="100%" cellpadding="0" cellspacing="0">
                         <tr>
                           <td data-color="title" data-size="size title" data-min="20" data-max="40" data-link-color="link title color" data-link-style="text-decoration:none; color:#292c34;" class="title" align="center" style="font:30px/33px Arial, Helvetica, sans-serif; color:#292c34; padding:0 0 24px;">
-                            Free book mock-up
+                            Free book mock-up <?php echo $url_register;?>
                           </td>
                         </tr>
                         <tr>

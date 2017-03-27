@@ -11,7 +11,7 @@
 			<br><br>
 		    <center>
 		            <!-- /.row -->
-		            <form method="post" action="<?php echo base_url(); ?>register/reset_password/<?php echo $kode; ?>">
+		            <form method="post" action="<?php echo base_url(); ?>register/act_reset_password/<?php echo $kode; ?>">
 				<div class="row">
 	           	 	<div class="col-lg-2"></div>
 	                <div class="col-lg-8"><br><br>
