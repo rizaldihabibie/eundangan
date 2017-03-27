@@ -103,6 +103,20 @@
                       <input type="file" name="foto4" class="form-control" required>
                     </div><br>
                   </div>
+                  <div class="form-group">
+                    <div class="col-lg-3">
+                    </div>
+                    <div class="col-lg-6">
+                      <input type="file" name="foto5" class="form-control" required>
+                    </div><br>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-lg-3">
+                    </div>
+                    <div class="col-lg-6">
+                      <input type="file" name="foto6" class="form-control" required>
+                    </div><br>
+                  </div>
                 <!-- /.box-body --><br>
                 <div class="col-lg-2"></div>
                 <div class="col-lg-8">

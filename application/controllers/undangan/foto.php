@@ -139,6 +139,8 @@ class foto extends CI_Controller {
                 $data[1] = 'foto2';
                 $data[2] = 'foto3';
                 $data[3] = 'foto4';
+                $data[4] = 'foto5';
+                $data[5] = 'foto6';
 
                 $daftarNamaFoto = array();
 
