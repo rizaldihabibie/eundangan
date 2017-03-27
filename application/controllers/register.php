@@ -105,16 +105,16 @@ class register extends CI_Controller {
 				            $body = 'Halo ' . $list->nama . ', <br> Terimakasih telah menjadi member Jadimanten. Untuk menyelesaikan proses pendaftaran, mohon verifikasi akun anda. <br>Klik link dibawah ini untuk verifikasi : <br><br> ' . base_url('register/aktivasi_berhasil/' . $kode);
 				          
 				            $result = $this->email
-				                ->from('cs@niscalindo.com')
+				                ->from('rizaldihabibie28@gmail.com')
 				                // ->reply_to('yoursecondemail@somedomain.com')    // Optional, an account where a human being reads.
 				                ->to($username)
 				                ->subject($subject)
 				                ->message($body)
 				                ->send();
 				               
-				    //            var_dump($result);
-								// echo '<br />';
-								// echo $this->email->print_debugger();exit();
+				               var_dump($result);
+								echo '<br />';
+								echo $this->email->print_debugger();exit();
 							$this->session->set_flashdata('indikator_register', 'true');
 							$this->session->set_flashdata('message', 'Terimakasih, Registrasi Member Berhasil');
 

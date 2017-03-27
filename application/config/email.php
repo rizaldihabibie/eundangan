@@ -6,9 +6,9 @@
 $config['useragent']        = 'CodeIgniter';              // Mail engine switcher: 'CodeIgniter' or 'PHPMailer'
 $config['protocol']         = 'smtp';                   // 'mail', 'sendmail', or 'smtp'
 $config['mailpath']         = '/usr/sbin/sendmail';
-$config['smtp_host']        = 'srv24.niagahoster.com';
-$config['smtp_user']        = 'cs@niscalindo.com';
-$config['smtp_pass']        = 'boom007!';
+$config['smtp_host']        = 'smtp.gmail.com';
+$config['smtp_user']        = 'rizaldihabibie28@gmail.com';
+$config['smtp_pass']        = 'aisyachikita28';
 $config['smtp_port']        = 587;
 $config['smtp_timeout']     = 30;                       // (in seconds)
 $config['smtp_crypto']      = 'tls';                    // '' or 'tls' or 'ssl'
