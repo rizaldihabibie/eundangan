@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class foto extends CI_Controller {
+class album_foto extends CI_Controller {
 	
 	public function __construct()
 	{
@@ -36,10 +36,12 @@ class foto extends CI_Controller {
 		$this->form_validation->set_rules('jenis_kelamin', ' Hak akses', 'trim|xss_clean');
 		
 		if ($this->form_validation->run() === FALSE) {
+			$id = $this->session->userdata('SESS_AKUN_ID_USER');
+			$this->m_foto->getFoto($id);
 
-			$this->load->view('global_akun/header_global_akun');
-	        $this->load->view('undangan/v_album_foto', array('error' => ' ' ));
-	        $this->load->view('global_akun/footer_global_akun');
+			// $this->load->view('global_akun/header_global_akun');
+	  //       $this->load->view('undangan/v_album_foto', array('error' => ' ' ));
+	  //       $this->load->view('global_akun/footer_global_akun');
 		
 		} else {
 
@@ -126,104 +128,7 @@ class foto extends CI_Controller {
 
      public function do_upload()
         {
-                $config['upload_path']          = './uploads/';
-                $config['allowed_types']        = 'gif|jpg|png';
-                // $config['max_size']             = 5024;
-                // $config['max_width']            = 1024;
-                // $config['max_height']           = 768;
 
-                $this->load->library('upload', $config);
-
-                $data = array();
-                $data[0] = 'foto1';
-                $data[1] = 'foto2';
-                $data[2] = 'foto3';
-                $data[3] = 'foto4';
-                $data[4] = 'foto5';
-                $data[5] = 'foto6';
-
-                $daftarNamaFoto = array();
-
-                $jml = count($data);
-                $success = true;
-                $error = "";
-                for($i = 0; $i<$jml; $i++){
-                	$fileName = $_FILES[$data[$i]]['name'];
-                	$_FILES[$data[$i]]['name'] = $this->session->userdata('SESS_AKUN_USER_NAME').$fileName;
-                	 if ( ! $this->upload->do_upload($data[$i])){
-                	 	$success = false;
-                	 	$error = $this->upload->display_errors();
-                	 	break;
-                	 }else{
-                	 	$fileName = $_FILES[$data[$i]]['name'];
-                	 	$daftarNamaFoto[$i] = $fileName;
-                	 }
-
-                }
-
-                if ( !$success)
-                {
-                       
-                        $this->session->set_flashdata('error', $error);
-                        $this->load->view('global_akun/header_global_akun');
-	        			$this->load->view('undangan/v_album_foto');
-	        			$this->load->view('global_akun/footer_global_akun');
-                        
-                }
-                else
-                {
-                		$dataFoto = array();
-                		$jml = count($daftarNamaFoto);
-                		$saveData = array();
-                		for($i = 0; $i<$jml; $i++){
-                			$dataFoto['id_user'] = $this->session->userdata('SESS_AKUN_ID_USER');
-                			$dataFoto['nama_file'] = $daftarNamaFoto[$i];
-                			$saveData[$i] = $dataFoto;
-                		}
-
-                		if($this->m_foto->addFoto($saveData)){
-                			$this->session->set_flashdata('success', 'data berhasil di simpan');
-                		}else{
-                			$this->session->set_flashdata('error', "$error saving db");
-                		}
-
-                        $data = array('upload_data' => $this->upload->data());
-                        
-                        $this->load->view('global_akun/header_global_akun');
-	        			$this->load->view('undangan/v_album_foto');
-	        			$this->load->view('global_akun/footer_global_akun');
-                }
         }
-
-   //  public function saveAyat(){
-
-			// $nama_ayat = $this->input->post('nama_ayat');
-			// $isi_ayat = $this->input->post('isi_ayat');
-
-			// $formatAyat ="/^.{5,}$/";
-
-			// if (!preg_match($formatAyat, $isi_ayat)) {
-			// 		$this->session->set_flashdata('isi_ayat', 'Isi ayat tidak sesuai');
-			// 		redirect(base_url('undangan/ayat'));
-
-			// }else if(!preg_match($formatAyat, $nama_ayat)){
-			// 		$this->session->set_flashdata('nama_ayat', 'Nama ayat tidak sesuai');
-			// 		redirect(base_url('undangan/ayat'));
-			// }else{
-			// 	$data = array(
-			// 				'id_user' => $this->session->userdata('SESS_AKUN_ID_USER'),
-			// 				'nama_ayat' => $nama_ayat,
-			// 				'isi_ayat' => $isi_ayat
-			// 				);
-
-			// 	$success = $this->m_undangan->addayat($data);
-			// 	if($success){
-			// 		$this->session->set_flashdata('success', 'data berhasil di simpan');
-			// 		redirect(base_url('undangan/ayat'));
-			// 	}
-			// }
-			
-
-   //  }
 	
 }

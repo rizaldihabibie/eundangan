@@ -34,8 +34,8 @@
               <li><a href="<?php echo base_url() ?>undangan/ayat">ayat</a></li>
               <li><a href="#">Love Stories</a></li>
               <li><a href="<?php echo base_url() ?>undangan/foto">Album foto</a></li>
-              <li><a href="<?php echo base_url() ?>undangan/user_authentication">Slide show</a></li>
-              <li><a href="#">Lagu</a></li>
+              <li><a href="<?php echo base_url() ?>undangan/album_foto">Slide show</a></li>
+              <li><a href="#">lagu</li>
               <li><a href="#">Video</a></li>
               <li><a href="#">Tema</a></li>
               <li><a href="#">Preview Undangan</a></li>
