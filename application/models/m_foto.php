@@ -22,8 +22,8 @@ class m_foto extends CI_Model
 
 	function getFoto($idUser){
 		$this->db->where('id_user', $idUser);
-		$t = $this->db->get('album_foto')->result();
-		return $t;
+		$this->db->get('album_foto')->result();
+		return $this->db->get('album_foto')->result();
 	}
 
 }

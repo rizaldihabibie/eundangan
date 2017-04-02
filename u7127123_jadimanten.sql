@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 16, 2017 at 04:23 PM
+-- Generation Time: Apr 02, 2017 at 04:51 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.21
 
@@ -37,10 +37,12 @@ CREATE TABLE `album_foto` (
 --
 
 INSERT INTO `album_foto` (`id_foto`, `id_user`, `nama_file`) VALUES
-(1, 0, 'cicaks.dead@gmail.com1.jpg'),
-(2, 0, 'cicaks.dead@gmail.com2.jpg'),
-(3, 0, 'cicaks.dead@gmail.com3.jpg'),
-(4, 0, 'cicaks.dead@gmail.com4.jpg');
+(1, 2, 'cicaks_dead@gmail_com1479149915_Shopping-cart.png'),
+(2, 2, 'cicaks_dead@gmail_com1479149836_Package-Download.png'),
+(3, 2, 'cicaks_dead@gmail_com1480022303_BT_printer.png'),
+(4, 2, 'cicaks_dead@gmail_com1480358285_export.png'),
+(5, 2, 'cicaks_dead@gmail_com1485292261_stock-market.png'),
+(6, 2, 'cicaks_dead@gmail_com1485292562_Sales-by-Payment-Method-rep.png');
 
 -- --------------------------------------------------------
 
@@ -50,17 +52,10 @@ INSERT INTO `album_foto` (`id_foto`, `id_user`, `nama_file`) VALUES
 
 CREATE TABLE `comment` (
   `id_comment` int(11) NOT NULL,
-  `id_guest` int(11) NOT NULL,
+  `id_guest` varchar(255) NOT NULL,
   `id_undangan` int(11) DEFAULT NULL,
   `comment` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `comment`
---
-
-INSERT INTO `comment` (`id_comment`, `id_guest`, `id_undangan`, `comment`) VALUES
-(1, 2147483647, NULL, 'jhghghj');
 
 -- --------------------------------------------------------
 
@@ -80,13 +75,6 @@ CREATE TABLE `guest` (
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `guest`
---
-
-INSERT INTO `guest` (`id`, `oauth_provider`, `oauth_uid`, `first_name`, `last_name`, `email`, `locale`, `picture_url`, `created`, `modified`) VALUES
-(1, 'google', '106932733263770224067', 'Rizaldi', 'Habibie', 'rizaldihabibie28@gmail.com', 'in', 'https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg', '2017-02-15 10:18:06', '2017-02-15 10:18:06');
 
 -- --------------------------------------------------------
 
@@ -232,17 +220,17 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `album_foto`
 --
 ALTER TABLE `album_foto`
-  MODIFY `id_foto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_foto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `guest`
 --
 ALTER TABLE `guest`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `undangan`
 --

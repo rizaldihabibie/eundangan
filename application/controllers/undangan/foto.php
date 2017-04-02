@@ -147,9 +147,11 @@ class foto extends CI_Controller {
                 $jml = count($data);
                 $success = true;
                 $error = "";
+                $userName = str_replace(".","_",$this->session->userdata('SESS_AKUN_USER_NAME'));
+
                 for($i = 0; $i<$jml; $i++){
                 	$fileName = $_FILES[$data[$i]]['name'];
-                	$_FILES[$data[$i]]['name'] = $this->session->userdata('SESS_AKUN_USER_NAME').$fileName;
+                	$_FILES[$data[$i]]['name'] = $userName.$fileName;
                 	 if ( ! $this->upload->do_upload($data[$i])){
                 	 	$success = false;
                 	 	$error = $this->upload->display_errors();

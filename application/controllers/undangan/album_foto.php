@@ -37,11 +37,14 @@ class album_foto extends CI_Controller {
 		
 		if ($this->form_validation->run() === FALSE) {
 			$id = $this->session->userdata('SESS_AKUN_ID_USER');
-			$this->m_foto->getFoto($id);
-
-			// $this->load->view('global_akun/header_global_akun');
-	  //       $this->load->view('undangan/v_album_foto', array('error' => ' ' ));
-	  //       $this->load->view('global_akun/footer_global_akun');
+			$data['dataFoto'] = $this->m_foto->getFoto($id);
+			// foreach ($t as $row) {
+			// 	echo $row->nama_file;
+			// }
+			// exit();
+			$this->load->view('global_akun/header_global_akun');
+	        $this->load->view('undangan/v_data_foto', $data);
+	        $this->load->view('global_akun/footer_global_akun');
 		
 		} else {
 
